@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>แปลงเวลา</title>
+    <style>
+    body {
+        display: flex;
+        justify-content: center; /* กลางแนวนอน */
+        align-items: center;     /* กลางแนวตั้ง */
+        height: 100vh;
+        flex-direction: column;
+        font-family: Arial;
+        background-color: #fff0f6;
+    }
+
+    h2 {
+        color: #ff00aa;
+    }
+
+    input {
+        padding: 8px;
+        margin: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        padding: 8px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+
+    #result {
+        margin-top: 15px;
+        font-size: 18px;
+        color: #d63384;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<h2>แปลงเวลา (hh:mm:ss)</h2>
+
+<input type="text" id="time" placeholder="เช่น 12:30:45">
+<button onclick="convertTime()">แสดงผล</button>
+
+<p id="result"></p>
+
+<script>
+function convertTime(){
+    let t = document.getElementById("time").value;
+    let arr = t.split(":");
+
+    let hh = arr[0];
+    let mm = arr[1];
+    let ss = arr[2];
+
+    let output = hh + " ชั่วโมง " + mm + " นาที " + ss + " วินาที";
+
+    document.getElementById("result").innerHTML = output;
+}
+</script>
+
+</body>
+</html>

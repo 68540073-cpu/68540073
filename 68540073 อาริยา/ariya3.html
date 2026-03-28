@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เปลี่ยนสีหน้าเว็บ</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            color: white;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        #green-btn { background-color: green; }
+        #orange-btn { background-color: orange; }
+        #purple-btn { background-color: purple; }
+
+        #clear-btn {
+            background-color: #f1f1f1;
+            color: black;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>เลือกสีพื้นหลัง</h2>
+
+    <div class="container">
+        <button id="green-btn">เขียว</button>
+        <button id="orange-btn">ส้ม</button>
+        <button id="purple-btn">ม่วง</button>
+        <button id="clear-btn">Clear</button>
+    </div>
+</div>
+
+<script>
+    const greenBtn = document.getElementById('green-btn');
+    const orangeBtn = document.getElementById('orange-btn');
+    const purpleBtn = document.getElementById('purple-btn');
+    const clearBtn = document.getElementById('clear-btn');
+
+    const body = document.body;
+
+    greenBtn.addEventListener('click', () => {
+        body.style.backgroundColor = 'green';
+    });
+
+    orangeBtn.addEventListener('click', () => {
+        body.style.backgroundColor = 'orange';
+    });
+
+    purpleBtn.addEventListener('click', () => {
+        body.style.backgroundColor = 'purple';
+    });
+
+    clearBtn.addEventListener('click', () => {
+        body.style.backgroundColor = 'white';
+    });
+</script>
+
+</body>
+</html>

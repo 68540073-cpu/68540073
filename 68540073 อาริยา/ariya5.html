@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FizzBuzz</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ffe6eb;
+            font-family: Arial;
+            margin: 0;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #cc0070;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            width: 150px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #cc007e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a30031;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff4081;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>FizzBuzz (1 - 100)</h2>
+
+    <input type="number" id="num" placeholder="1-100">
+    <br>
+
+    <button onclick="check()">ตรวจสอบ</button>
+
+    <h2 id="result"></h2>
+
+</div>
+
+<script>
+    function check() {
+        let n = document.getElementById("num").value;
+
+        if (n === "") {
+            alert("กรุณากรอกตัวเลข");
+            return;
+        }
+
+        n = Number(n);
+
+        if (n < 1 || n > 100) {
+            alert("กรุณากรอกเลข 1-100");
+            return;
+        }
+
+        let resultText = "";
+
+        if (n % 3 === 0 && n % 5 === 0) {
+            resultText = "FizzBuzz";
+        } else if (n % 3 === 0) {
+            resultText = "Fizz";
+        } else if (n % 5 === 0) {
+            resultText = "Buzz";
+        } else {
+            resultText = n;
+        }
+
+        document.getElementById("result").innerHTML = resultText;
+    }
+
+    // กด Enter ได้เลย
+    document.getElementById("num").addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            check();
+        }
+    });
+</script>
+
+</body>
+</html>
